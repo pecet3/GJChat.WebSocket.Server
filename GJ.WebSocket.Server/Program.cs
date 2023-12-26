@@ -22,7 +22,7 @@ app.Map("/ws", async context =>
         using var conn = await context.WebSockets.AcceptWebSocketAsync();
         connections.Add(conn);
 
-        await Broadcast($"{connName}  do³¹czy³ na serwer!");
+        await Broadcast($"{connName} do³¹czy³ na serwer!");
         await Broadcast($"{connections.Count} u¿ytkowników na serwerze.");
 
         await ReceiveMessage(conn, async (result, buffer) =>
